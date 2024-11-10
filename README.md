@@ -1,9 +1,14 @@
 # NETFLIX-GPT
 
 -create-react-app
-
 - installed tailwind
-
+-configured tailwind
+-Header
+-Routing of App
+-Login Force
+-Sign up Force
+-Form Validation
+-useRef Hook
 # FEATUERS
 
 -Login\Signup Screen

@@ -1,9 +1,19 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Header from "./Header";
+import { checkValidData } from "../utils/Validate";
 const Login = () => {
-  const [isSignInForm, setIsSignInForm] = useState(false);
+  const [isSignInForm, setIsSignInForm] = useState(true);
   const toggleSignInForm = () => {
     setIsSignInForm(!isSignInForm);
+  };
+  const [errorMessage, setErrorMessage] = useState(null);
+  const email = useRef(null);
+  const password = useRef(null);
+  const handleButtonClick = () => {
+    //Validate the form
+    const message = checkValidData(email.current.value, password.current.value);
+    console.log(message);
+    setErrorMessage(message);
   };
   return (
     <div>
@@ -23,6 +33,9 @@ const Login = () => {
       </div>
 
       <form
+        onSubmit={(e) => {
+          e.preventDefault();
+        }}
         className="absolute
        w-3/12 bg-black my-36 mx-auto right-0 left-0 p-6 rounded-lg bg-opacity-80"
       >
@@ -34,21 +47,29 @@ const Login = () => {
           <input
             type="text"
             placeholder="Full Name"
-            className=" m-2 py-2 w-10/12  bg-gray-700"
+            className=" m-2 p-2 w-10/12  bg-gray-700"
           />
         )}
         <input
+          ref={email}
           type="text"
           placeholder="Email Address"
-          className=" m-2 py-2 w-10/12  bg-gray-700"
+          className=" m-2 p-2 w-10/12  bg-gray-700"
         />
 
         <input
+          ref={password}
           type="password"
           placeholder="Password"
-          className="m-2  py-2 w-10/12   bg-gray-700 "
+          className="m-2  p-2 w-10/12   bg-gray-700 "
         />
-        <button className=" bg-red-600 text-white  m-2 py-2 w-10/12 rounded-lg">
+        <p className="text-red-600 m-2 py-2 text-center w-10/12">
+          {errorMessage}
+        </p>
+        <button
+          className=" bg-red-600 text-white  m-2 py-2 w-10/12 rounded-lg"
+          onClick={handleButtonClick}
+        >
           {isSignInForm ? "Sign In" : "Sign Up"}
         </button>
         <div>
@@ -57,9 +78,7 @@ const Login = () => {
             Remember Me
           </label>
         </div>
-        {/* <p className="text-white m-2 py-2 text-center w-10/12">
-          Forgot Password?
-        </p> */}
+        {/* <p className="text-white m-2 py-2 text-center w-10/12"></p> */}
         <p
           className="text-white m-2 p-2 w-10/12 cursor-pointer"
           onClick={toggleSignInForm}
