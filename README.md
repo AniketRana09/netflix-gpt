@@ -10,6 +10,21 @@
   -form validation
   -use Ref hook
 
+  - firebase set up
+  - create sign up user
+    -implement signup/sign in
+    -created redux store with userSlice
+    - implemente Sign out
+    - update Profile
+  - fetch Movie from TMDB
+
+  -Bug fixes:
+
+  - sign up user displayName and profile picture update
+  - if the user is not logged in redirect /browse to login
+  - Unsunbscribe onAuthStateChanged Callback
+  - Add hardcoded Values to Constant File
+
 # FEATURES
 
 - LOGIN/SIGN UP
