@@ -2,10 +2,8 @@ import React from "react";
 import MovieCard from "./MovieCard";
 
 const MovieList = ({ title, movies }) => {
-  console.log(movies);
-
   return (
-    <div className=" p-6">
+    <div className=" flex flex-col p-6">
       <h1 className="text-3xl py-4 text-white">{title}</h1>
       <div className="flex overflow-x-scroll no-scrollbar">
         <div className="flex gap-3">

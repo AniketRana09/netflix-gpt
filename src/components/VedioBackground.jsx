@@ -18,7 +18,7 @@ const VedioBackground = ({ movieId }) => {
         }
         title="YouTube video player"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin"
+        // referrerpolicy="strict-origin-when-cross-origin"
       ></iframe>
     </div>
   );
