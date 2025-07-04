@@ -96,15 +96,15 @@ const Login = () => {
   return (
     <div>
       <Header />
-      <div className="absolute">
-        <img className="bg-gradient-to-bl from-black " src={NET_COVER} />
+      <div className="fixed">
+        <img className="h-svh object-cover w-svw" src={NET_COVER} />
       </div>
 
       <form
         onSubmit={(e) => e.preventDefault()}
-        className=" absolute w-3/12 p-12 bg-black/80 mx-auto  my-36 right-0 left-0 text-white rounded-lg  "
+        className=" absolute w-3/4 md:w-3/12 p-12 bg-black/80 mx-auto  my-36 right-0 left-0 text-white rounded-lg  "
       >
-        <h2 className=" font-bold text-4xl py-4">
+        <h2 className=" font-bold text-2xl md:text-4xl py-2 md:py-4">
           {isSignInForm ? "Sign In" : "Sign Up"}
         </h2>
         {!isSignInForm && (
@@ -130,12 +130,12 @@ const Login = () => {
         />
         <p className=" text-red-500 mx-5 text-lg">{errMessage}</p>
         <button
-          className="p-4 my-6  w-full bg-red-500 rounded-md"
+          className="md:p-4 p-3 md:my-6 my-3 w-full bg-red-500 rounded-md"
           onClick={handleButtonClick}
         >
           {isSignInForm ? "Sign In" : "Sign Up"}
         </button>
-        <p className="mx-5 cursor-pointer" onClick={toggleSignInForm}>
+        <p className="md:mx-5  cursor-pointer" onClick={toggleSignInForm}>
           {isSignInForm
             ? "New to Netflix? Sign up Now!"
             : " Already a member !Sign In"}

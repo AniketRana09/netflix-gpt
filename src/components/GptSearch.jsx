@@ -5,13 +5,15 @@ import { NET_COVER } from "../utils/Constants";
 
 function GptSearch() {
   return (
-    <div>
-      <div className="absolute -z-10">
-        <img src={NET_COVER} />
+    <>
+      <div className="fixed -z-10 ">
+        <img className="h-screen object-cover md:w-screen" src={NET_COVER} />
       </div>
-      <GptSearchBar />
-      <GptMovieSuggestions />
-    </div>
+      <div className="">
+        <GptSearchBar />
+        <GptMovieSuggestions />
+      </div>
+    </>
   );
 }
 

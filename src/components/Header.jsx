@@ -56,10 +56,10 @@ const Header = () => {
     dispatch(changeLanguage(e.target.value));
   };
   return (
-    <div className="absolute px-8 py-2 bg-gradient-to-b  from-black rounded-b-md z-20 w-screen flex justify-between ">
-      <img className="w-44" src={LOGO} />
+    <div className="absolute px-8 py-2 bg-gradient-to-b  from-black rounded-b-md z-20 w-screen flex flex-col md:justify-between md:flex-row ">
+      <img className="w-44 mx-auto md:mx-0" src={LOGO} />
       {user && (
-        <div className="flex items-center p-2 ">
+        <div className="flex items-center md:items-center p-0 md:p-2 ">
           {showGpt && (
             <select
               className="bg-gray-800 p-2 m-4 text-white rounded-lg"
@@ -73,7 +73,7 @@ const Header = () => {
             </select>
           )}
           <button
-            className="py-2  px-4 m-2 bg-purple-800 text-white rounded-lg"
+            className="md:py-2 py-1 px-5 md:px-4 md:m-2 bg-purple-800 text-white rounded-lg "
             onClick={handleGptSearch}
           >
             {showGpt ? "Home Page" : "Gpt Search"}
@@ -81,14 +81,14 @@ const Header = () => {
 
           <img
             alt="user-logo"
-            className="h-14 mx-3  p-2 rounded-2xl"
+            className="h-14 hidden md:inline-block  mx-1 md:mx-3  p-2 rounded-2xl"
             src={user?.photoURL}
           />
-          <h2 className="text-lg font-semibold text-white">
+          <h2 className="hidden md:inline-block text-lg font-semibold text-white">
             {user?.displayName}
           </h2>
           <button
-            className="bg-red-500 text-white p-2 m-2 rounded-md"
+            className="bg-red-500 text-white rounded-md md:py-2 py-1 px-5 md:px-4 md:m-2"
             onClick={handleSignOut}
           >
             Sign Out
