@@ -6,7 +6,7 @@ const VedioBackground = ({ movieId }) => {
   useMovieTrailer(movieId);
 
   return (
-    <div className=" z-0 overflow-hidden ">
+    <div className=" z-0 overflow-hidden bg-black">
       <iframe
         className="w-screen  aspect-video scale-125"
         src={
