@@ -6,9 +6,9 @@ const VedioBackground = ({ movieId }) => {
   useMovieTrailer(movieId);
 
   return (
-    <div className=" z-0 overflow-hidden scale-110">
+    <div className=" z-0 overflow-hidden ">
       <iframe
-        className="w-screen  aspect-video"
+        className="w-screen  aspect-video scale-125"
         src={
           "https://www.youtube.com/embed/" +
           trailerVideo?.key +
